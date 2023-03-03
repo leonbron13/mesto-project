@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Mesto</title>
+</head>
+<body class="page">
+  <header class="header">
+    <div class="header__container">
+      <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+    </div>
+  </header>
+
+  <main class="content">
+
+    <section class="popup popup_opened">
+      <div class="popup__container">
+        <form class="popup__form" name="profile">
+          <h2 class="popup__title" >Редактировать профиль</h2>
+          <input class="popup__input" type="text" value="Жак-Ив Кусто">
+          <input class="popup__input" type="text" value="Исследователь океана">
+          <button class="popup__save-button" type="submit">Сохранить</button>
+          <button class="popup__close-button button" type="button"></button>
+        </form>
+      </div>
+
+    </section>
+
+    <section class="profile">
+      <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
+      <div class="profile__info">
+        <div class="profile__title">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button class="profile__edit-button button" type="button"></button>
+        </div>
+        <p class="profile__status">Исследователь океана</p>
+      </div>
+      <button class="profile__add-button button" type="button"></button>
+    </section>
+    <div class="cards">
+      <article class="card">
+        <img class="card__img" src="./images/karachaevo.jpg" alt="Карачаево">
+        <div class="card__container">
+          <h2 class="card__title">Карачаевск</h2>
+          <button class="card__like-button button card__like-button_checked" type="button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card__img" src="./images/elbrus.jpg" alt="Эльбрус">
+        <div class="card__container">
+          <h2 class="card__title">Гора Эльбрус</h2>
+          <button class="card__like-button button" type="button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card__img" src="./images/dombai.jpg" alt="Домбай">
+        <div class="card__container">
+          <h2 class="card__title">Домбай</h2>
+          <button class="card__like-button button" type="button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card__img" src="./images/elbrus.jpg" alt="Эльбрус">
+        <div class="card__container">
+          <h2 class="card__title">Гора Эльбрус</h2>
+          <button class="card__like-button button" type="button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card__img" src="./images/dombai.jpg" alt="Домбай">
+        <div class="card__container">
+          <h2 class="card__title">Домбай</h2>
+          <button class="card-button button" type="button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card__img" src="./images/karachaevo.jpg" alt="Карачаево">
+        <div class="card__container">
+          <h2 class="card__title">Карачаево-Черкесия</h2>
+          <button class="card-button button" type="button"></button>
+        </div>
+      </article>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__copyright">© 2023 Mesto Russia</p>
+  </footer>
+</body>
+</html>
