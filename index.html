@@ -11,18 +11,43 @@
   <header class="header">
       <img class="header__logo" src="./images/logo.svg" alt="Логотип">
   </header>
+
   <main class="content">
-    <section class="popup popup_opened">
+
+    <section class="popup ">
       <div class="popup__container">
-        <form class="popup__form" name="profile">
+        <form class="popup__form " name="profile">
           <h2 class="popup__title" >Редактировать профиль</h2>
           <input class="popup__input" name="name" type="text" value="Жак-Ив Кусто">
           <input class="popup__input" name="status" type="text" value="Исследователь океана">
-          <button class="popup__save-button" type="submit">Сохранить</button>
+          <button class="popup__save-button" >Сохранить</button>
         </form>
         <button class="popup__close-button button" type="button"></button>
       </div>
     </section>
+
+    <section class="popup popup__open-image">
+      <div class="popup__container popup__container_image">
+        <button class="popup__close-button popup__close-button_image" type="button"></button>
+        <div class="popup__place-image">
+          <img class="popup__image" src="#" alt="#">
+          <p class="popup__subtitle"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile__form ">
+      <div class="profile__container">
+        <section class="popup__profile " name="profile">
+          <h2 class="popup__title" >Новое место</h2>
+          <input class="profile__popup profile__popup-title" name="title" type="text" placeholder="Название">
+          <input class="profile__popup profile__popup-image" name="image" type="text" placeholder="Ссылка на картинку">
+          <button class="popup__save-button adding_button">Создать</button>
+        </section>
+        <button class="profile__close-button button" type="button"></button>
+      </div>
+    </section>
+
     <section class="profile">
       <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
       <div class="profile__info">
@@ -36,44 +61,50 @@
     </section>
     <section class="cards">
       <article class="card">
-        <img class="card__img" src="./images/karachaevo.jpg" alt="Карачаево">
+        <img class="card__img" src="./images/arkhyz.jpg" alt="Карачаево" type="button">
+        <button class="card__trash" type="button"></button>
         <div class="card__container">
-          <h2 class="card__title">Карачаевск</h2>
-          <button class="card__like-button button card__like-button_checked" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img class="card__img" src="./images/elbrus.jpg" alt="Эльбрус">
-        <div class="card__container">
-          <h2 class="card__title">Гора Эльбрус</h2>
+          <h2 class="card__title">Архыз</h2>
           <button class="card__like-button button" type="button"></button>
         </div>
       </article>
       <article class="card">
-        <img class="card__img" src="./images/dombai.jpg" alt="Домбай">
+        <img class="card__img" src="./images/chelyabinsk-oblast.jpg" alt="Эльбрус">
+        <button class="card__trash" type="button"></button>
         <div class="card__container">
-          <h2 class="card__title">Домбай</h2>
+          <h2 class="card__title">Челябинская область</h2>
           <button class="card__like-button button" type="button"></button>
         </div>
       </article>
       <article class="card">
-        <img class="card__img" src="./images/elbrus.jpg" alt="Эльбрус">
+        <img class="card__img" src="./images/ivanovo.jpg" alt="Домбай">
+        <button class="card__trash" type="button"></button>
         <div class="card__container">
-          <h2 class="card__title">Гора Эльбрус</h2>
+          <h2 class="card__title">Иваново</h2>
           <button class="card__like-button button" type="button"></button>
         </div>
       </article>
       <article class="card">
-        <img class="card__img" src="./images/dombai.jpg" alt="Домбай">
+        <img class="card__img" src="./images/kamchatka.jpg" alt="Эльбрус">
+        <button class="card__trash" type="button"></button>
         <div class="card__container">
-          <h2 class="card__title">Домбай</h2>
+          <h2 class="card__title">Камчатка</h2>
           <button class="card__like-button button" type="button"></button>
         </div>
       </article>
       <article class="card">
-        <img class="card__img" src="./images/karachaevo.jpg" alt="Карачаево">
+        <img class="card__img" src="./images/kholmogorsky-rayon.jpg" alt="Домбай">
+        <button class="card__trash" type="button"></button>
         <div class="card__container">
-          <h2 class="card__title">Карачаево-Черкесия</h2>
+          <h2 class="card__title">Холмогорский район</h2>
+          <button class="card__like-button button" type="button"></button>
+        </div>
+      </article>
+      <article class="card">
+        <img class="card__img" src="./images/baikal.jpg" alt="Карачаево">
+        <button class="card__trash" type="button"></button>
+        <div class="card__container">
+          <h2 class="card__title">Байкал</h2>
           <button class="card__like-button button" type="button"></button>
         </div>
       </article>
@@ -84,5 +115,17 @@
   <footer class="footer">
     <p class="footer__copyright">© 2023 Mesto Russia</p>
   </footer>
+  
+  <template id = 'card-template'>
+    <article class="card">
+      <img class="card__img card__img-opened card__img-closed" alt="Картинка">
+      <button class="card__trash" type="button"></button>
+      <div class="card__container">
+        <h2 class="card__title"></h2>
+        <button class="card__like-button button" type="button"></button>
+      </div>
+    </article>
+  </template>
+  <script src="./script/script.js"></script>
 </body>
 </html>
