@@ -42,7 +42,7 @@ saveButton.addEventListener('click', function (e) {
 
 
     likeAction(cardElement)
-    cardsContainer.appendChild(cardElement);
+    cardsContainer.insertBefore(cardElement, cardsContainer.firstChild);
     
   });
 ////-----------------------------------------------------------------------LIKES-----------------------------------------------------------------------------//
