@@ -1,0 +1,6 @@
+.popup__open-image {
+    background: rgba(0,0,0,.9);
+    opacity: 0;
+    z-index: -10;
+    position: fixed;
+}
