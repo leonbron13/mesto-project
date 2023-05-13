@@ -1,0 +1,15 @@
+.popup__sample.popup__sample_opened{
+  background-color: rgba(0, 0, 0, .5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity .5s ease;
+  visibility: visible;
+  }
