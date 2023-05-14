@@ -131,4 +131,6 @@ confirmButton.addEventListener('click', (evt) => {
 
 editButton.addEventListener('click', () =>{
   openPopup(profilePopup)
-});
+  popupName.value = profileName.textContent
+  popupStatus.value = profileStatus.textContent
+}); 
