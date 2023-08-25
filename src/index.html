@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto</title>
+</head>
+<body class="page">
+  <header class="header">
+      <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип">
+  </header>
+
+  <section class="popup popup__avatar">
+    <div class="popup__container">
+      <form class="popup__avatar_form form" name="avatar" novalidate>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <div class="form__input-container">
+          <input
+            type="url"
+            name="avatar-link"
+            id="avatar-link"
+            placeholder="Ссылка на новый аватар"
+            class="form__input popup__form_input"
+            required
+          >
+          <span class="form__input-error avatar-link-error"></span>
+        </div>  
+        <button type="submit" class="popup__save-button popup__save-button form__button">Сохранить</button>
+      </form>
+
+      <button type="button" class="button popup__close-button"></button>
+      <div class="popup__overlay"></div>
+    </div>
+  </section> 
+
+  <main class="content">
+    <section class="popup profile-popup">
+      <div class="popup__container">
+        <form class="form" name="profile" novalidate>
+          <h2 class="popup__title" >Редактировать профиль</h2>
+          <div class="form__input-container">
+            <input class="form__input popup__input-name" 
+            name="name" 
+            type="text" 
+            value="Жак-Ив Кусто"
+            required
+            minlength="2"
+            maxlength="40"
+            pattern="^[A-Za-zА-Яа-яЁё\s\-]+$" 
+            data-error-message="Разрешены только латинские буквы, кириллические буквы, знаки дефиса и пробелы" 
+            required
+            id="name-input"
+            /> 
+            <span class="form__input-error name-input-error"> </span>
+          </div>
+          <div class="form__input-container">
+            <input 
+            class="form__input popup__input-status" 
+            name="status" type="text" 
+            value="Исследователь океана"
+            required
+            minlength="2"
+            maxlength="200"
+            pattern="^[A-Za-zА-Яа-яЁё\s\-]+$" 
+            data-error-message="Разрешены только латинские буквы, кириллические буквы, знаки дефиса и пробелы" 
+            required
+            id="status-input"
+            />
+            <span class="form__input-error status-input-error"> </span>
+          </div>
+          <button class="popup__save-button popup__confirm-button " type="submit">Сохранить</button>
+        </form>
+        <button class="popup__close-button button" type="button"></button>
+        <div class="popup__overlay"></div>
+      </div>
+    </section>
+    <section id="popup-picture" class="popup popup__open-image">
+      <div class="popup__container popup__container_image">
+        <button class="popup__close-button popup__close-button_image button" type="button"></button>
+        <div class="popup__place-image">
+          <img id="picture-image" class="popup__image" src="#" alt="#">
+          <p id="picture-title" class="popup__subtitle"></p>
+        </div>
+        <div class="popup__overlay"></div>
+      </div>
+    </section>
+    <section class="popup popup__sample">
+      <div class="popup__container">
+
+        
+        <form id="form-card" class="form" name="profile">
+
+          <h2 class="popup__title" >Новое место</h2>
+          <div class="form__input-container">
+            <input 
+            id="card-name" 
+            class="form__input  profile__popup-title" 
+            name="name" 
+            type="text" 
+            value="" 
+            placeholder="Название"
+            minlength="2"
+            maxlength="30"
+            pattern="^[A-Za-zА-Яа-яЁё\s\-]+$" 
+            data-error-message="Разрешены только латинские буквы, кириллические буквы, знаки дефиса и пробелы" 
+            required
+            id="card-name" 
+            >
+            <span class="form__input-error card-name-error"></span>
+          </div> 
+          <div class="form__input-container">
+            <input 
+            class="form__input  profile__popup-image" 
+            name="link"
+            value="" 
+            placeholder="Ссылка на картинку"
+            minlength="2"
+            required
+            id="card-link" 
+            type="url"
+            >
+            <span class="form__input-error card-link-error"></span>
+          </div>
+          <button class="popup__save-button adding_button"  type="submit">Создать</button>
+        </form>
+        <button class="profile__close-button button" type="button"></button>
+        <div class="popup__overlay"></div>
+      </div>
+    </section>
+    <section class="popup popup-confirm">
+      <div class="popup__container">
+        <form
+          class="form confirm-form"
+          name="confirm-form"
+          action="#"
+          novalidate
+        >
+          <h2 class="form__heading">
+            Вы уверены?
+          </h2>
+          <input type="submit" class="form__submit" value="Да" />
+        </form>
+        <button class="popup__close-button button" type="button"></button>
+        <div class="popup__overlay"></div>
+      </div>
+    </section>
+    <section class="profile">
+      <div class="profile__wrapper">
+        <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="Аватар">
+        <div class="profile__avatar-edit"></div>
+      </div>
+      <div class="profile__info">
+        <div class="profile__title">
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <button class="profile__edit-button button" type="button"></button>
+        </div>
+        <p class="profile__status">Исследователь океана</p>
+      </div>
+      <button class="profile__add-button button" type="button"></button>
+    </section>
+    <section id="gallery" class="cards"></section>
+  </main>
+  <footer class="footer">
+    <p class="footer__copyright">© 2023 Mesto Russia</p>
+  </footer>
+  <template id ='card-template'>
+    <article class="card">
+      <img class="card__img" src="" alt="">
+      <button class="card__trash" type="button"></button>
+      <div class="card__container">
+        <h2 class="card__title"></h2>
+        <span class="card__like-wrapper">
+          <button class="card__like-button" type="button"></button>
+          <span class="card__like-text">asd</span>
+        </span>
+      </div>
+    </article>
+  </template>
+</body>
+</html>
